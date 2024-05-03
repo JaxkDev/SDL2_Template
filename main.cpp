@@ -20,6 +20,16 @@ int main(int argc, char* argv []) {
         SDL_Quit();
         return 1;
     }
+    //draw a rectangle
+    SDL_SetRenderDrawColor(ren, 0, 255, 0, 255);
+    SDL_Rect r;
+    r.x = 50;
+    r.y = 50;
+    r.w = 50;
+    r.h = 50;
+    SDL_RenderFillRect(ren, &r);
+    SDL_RenderPresent(ren);
+
     SDL_Delay(3000);
     SDL_DestroyRenderer(ren);
     SDL_DestroyWindow(win);
