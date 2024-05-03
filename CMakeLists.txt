@@ -18,11 +18,13 @@ add_executable(SDL_Test main.cpp)
 
 target_link_libraries(SDL_Test ${SDL2_LIBRARY})
 
-add_custom_command(
+if(WIN OR WIN32)
+    add_custom_command(
         TARGET SDL_Test
         COMMENT "Copy SDL2.dll"
         POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/${SDL2_PATH}/bin/SDL2.dll ${PROJECT_BINARY_DIR}
         VERBATIM
-)
+    )
+ENDIF()
 
 install(TARGETS SDL_Test)

@@ -1,13 +1,13 @@
 #include <iostream>
 #include <SDL.h>
 
-int main(int argc, char* argv []) {
+int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv []) {
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
         return 1;
     }
     //DEMO WINDOW
-    SDL_Window *win = SDL_CreateWindow("Hello World!", 100, 100, 640, 480, SDL_WINDOW_SHOWN);
+    SDL_Window *win = SDL_CreateWindow("Hello World!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_MAXIMIZED);
     if (win == nullptr) {
         std::cout << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
         SDL_Quit();
@@ -30,7 +30,15 @@ int main(int argc, char* argv []) {
     SDL_RenderFillRect(ren, &r);
     SDL_RenderPresent(ren);
 
-    SDL_Delay(3000);
+    SDL_Event e;
+    bool quit = false;
+    while (!quit){
+        while (SDL_PollEvent(&e)){
+            if (e.type == SDL_QUIT){
+                quit = true;
+            }
+        }
+    }
     SDL_DestroyRenderer(ren);
     SDL_DestroyWindow(win);
 
