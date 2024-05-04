@@ -52,10 +52,9 @@ int main([[maybe_unused]] int argc, [[maybe_unused]] char* argv []) {
             }
         }
     }
+
     SDL_DestroyRenderer(ren);
     SDL_DestroyWindow(win);
-
-    std::cout << "Hello, World!" << std::endl;
     SDL_Quit();
     return 0;
 }
