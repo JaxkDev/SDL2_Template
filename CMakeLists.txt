@@ -11,12 +11,13 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
 set(SDL2_PATH "SDL2/x86_64-w64-mingw32")
 
+find_package(OpenGL REQUIRED)
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIR})
 
 add_executable(SDL_Test main.cpp)
 
-target_link_libraries(SDL_Test ${SDL2_LIBRARY})
+target_link_libraries(SDL_Test ${SDL2_LIBRARY} OpenGL32)
 
 if(WIN OR WIN32)
     add_custom_command(
