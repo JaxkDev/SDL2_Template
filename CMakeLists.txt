@@ -45,9 +45,9 @@ endif ()
 
 cmake_minimum_required(VERSION 3.20)
 project(
-    SDL_Test
+    SDL_Template
     VERSION ${PROJECT_VERSION}
-    DESCRIPTION "SDL Test"
+    DESCRIPTION "SDL Template"
     LANGUAGES C CXX
 )
 
@@ -110,18 +110,18 @@ list(APPEND ALL_LIBRARIES glad)
 ####################
 
 ## Create executable
-add_executable(SDL_Test ${ALL_SOURCES})
+add_executable(SDL_Template ${ALL_SOURCES})
 
 ## Link all libraries
-target_link_libraries(SDL_Test PRIVATE ${ALL_LIBRARIES})
+target_link_libraries(SDL_Template PRIVATE ${ALL_LIBRARIES})
 
 ## Copy all DLLs
 if(WIN32)
     foreach(DLL ${ALL_DLLS})
-        add_custom_command(TARGET SDL_Test POST_BUILD
+        add_custom_command(TARGET SDL_Template POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy_if_different
             ${DLL}
-            $<TARGET_FILE_DIR:SDL_Test>)
+            $<TARGET_FILE_DIR:SDL_Template>)
     endforeach()
 endif()
 

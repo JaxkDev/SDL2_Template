@@ -21,7 +21,7 @@ int main([[maybe_unused]] int argc, [[maybe_unused]] char *argv[]) {
     SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
 
     glm::u32 WindowFlags = SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN_DESKTOP;
-    SDL_Window *Window = SDL_CreateWindow("OpenGL Test", 100, 100, WinWidth, WinHeight, WindowFlags);
+    SDL_Window *Window = SDL_CreateWindow("SDL2 Modern OpenGL Template", 100, 100, WinWidth, WinHeight, WindowFlags);
     assert(Window);
 
     SDL_GLContext Context = SDL_GL_CreateContext(Window);
