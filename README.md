@@ -1,6 +1,8 @@
-# SDL_Test
+# SDL_Template
 
-This is a simple SDL2 test project. It is a simple window with a red background.
+A fully functioning template for SDL2 projects in C++.
 
-## Dependencies
+- (Modern) OpenGL 3.3+
 - SDL2
+- glad
+- glm
