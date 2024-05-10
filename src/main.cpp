@@ -11,10 +11,7 @@
 
 // Base with only one vert and frag: 26MB RAM
 
-void glShadowMatrix(GLfloat shadowMat[4][4], GLfloat groundplane[4], GLfloat lightpos[4]);
-void drawPyramid();
-
-int main(int argc, char *argv[]) {
+int main([[maybe_unused]] int argc, [[maybe_unused]] char *argv[]) {
     SDL_Init(SDL_INIT_EVERYTHING);
 
     //Use OpenGL 3.3 core (MUST MATCH GLAD)

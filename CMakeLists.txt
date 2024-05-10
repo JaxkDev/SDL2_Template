@@ -20,7 +20,6 @@ target_compile_options(project_warnings
         -Woverloaded-virtual
         -Wpedantic
         -Wconversion
-        -Wsign-conversion
         -Wnull-dereference
         -Wdouble-promotion
         -Wformat=2)
