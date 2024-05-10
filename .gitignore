@@ -2,8 +2,8 @@ cmake-build-debug/
 cmake-build-release/
 .vscode/
 .idea/
-SDL2*/
-glew*/
+extern*/
+build*/
 
 # Prerequisites
 *.d
